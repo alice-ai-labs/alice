@@ -1,0 +1,10 @@
+.vscode/
+__pycache__/
+
+.env
+fabfile.py
+
+*.log
+
+*.tar.gz
+*.zip
