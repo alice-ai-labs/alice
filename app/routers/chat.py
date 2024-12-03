@@ -20,7 +20,7 @@ provider = Gemini(api_key_gemini)
 class ReqChat(BaseModel):
     text: str
 
-@router.post('/')
+@router.post('/ask')
 async def chat(req :ReqChat):
     if not req.text:
         return

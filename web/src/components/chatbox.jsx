@@ -59,7 +59,7 @@ const post = async (url, data) => {
 }
 
 const chat = async (text) => {
-    return await post(apiBase + '/chat', { text })
+    return await post(apiBase + '/chat/ask', { text })
 }
 
 const rand = (max) => {
