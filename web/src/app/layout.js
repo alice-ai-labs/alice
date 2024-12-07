@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import './cyberpunk/cyberpunk.css';
 
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -14,8 +15,13 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Alice",
-  description: "The future is here",
+  title: process.env.NEXT_PUBLIC_APP_NAME,
+  description: process.env.NEXT_PUBLIC_APP_DESC,
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_DOMAIN),
+  openGraph: {
+    title: process.env.NEXT_PUBLIC_APP_NAME,
+    description: process.env.NEXT_PUBLIC_APP_DESC,
+  }
 };
 
 export default function RootLayout({ children }) {

@@ -1,7 +1,7 @@
 # Alice
 
 <div align="center">
-  <img src="./arts/alice-4.jpg" alt="Alice Banner" width="20%" />
+  <img src="./arts/alice-16-9-4.jpg" alt="Alice Banner" width="80%" />
 </div>
 
 ## 🚀 Quick Start

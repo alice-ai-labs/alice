@@ -10,25 +10,25 @@ import LogoPumpfun from '/public/pumpfun.webp'
 const NAV_BTNS = [
     {
         icon: '/pumpfun.webp',
-        url: 'https://google.com',
-        name: '',
+        url: process.env.NEXT_PUBLIC_PUMPFUN,
+        name: 'pump.fun',
     }, {
-        icon: '/dexscreener.svg',
-        url: 'https://google.com',
-        name: '',
+        icon: '/tiktok.svg',
+        url: process.env.NEXT_PUBLIC_TIKTOK,
+        name: 'Tiktok',
     }, {
         icon: 'https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg',
-        url: 'https://google.com',
-        name: '',
+        url: process.env.NEXT_PUBLIC_X,
+        name: 'X',
         invert: true,
     }, {
         icon: 'https://upload.wikimedia.org/wikipedia/commons/6/62/Telegram_logo_icon.svg',
-        url: 'https://google.com',
-        name: '',
+        url: process.env.NEXT_PUBLIC_TG,
+        name: 'Telegram',
     }, {
         icon: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg',
-        url: 'https://google.com',
-        name: '',
+        url: process.env.NEXT_PUBLIC_GITHUB,
+        name: 'Github',
         invert: true,
     }
 ]
