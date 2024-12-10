@@ -1,0 +1,23 @@
+name: Alice
+api: http://localhost:8000
+bots:
+  - token: 'xxxxx'
+    name: alicexai_bot
+    group: -100
+    groupUrl: ''
+    channel: 
+      id: -300
+      images: ''
+      buttons: ''
+      
+    greeting:
+      images:
+        - https://a.png
+        - https://b.png
+      caption: Alice is memecoin
+      buttons:
+        - text: X
+          url: https://x.org
+        - text: Telegram
+          url: https://t.com/asdf
+    

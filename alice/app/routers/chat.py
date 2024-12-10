@@ -21,15 +21,21 @@ provider = Gemini(api_key_gemini)
 class ReqChat(BaseModel):
     text: str
 
-@router.post('/ask')
-async def chat(req :ReqChat):
-    if not req.text:
-        return
-    
+
+def generate_text(text: str) -> str:
     try:
         reply = provider.send(req.text)
     except Exception as e:
         print('Exception:', e)
         reply = ''
+    return reply
+
+
+@router.post('/ask')
+async def chat(req :ReqChat):
+    if not req.text:
+        return
+    
+    reply = generate_text(req.text)
 
     return {'reply': reply}

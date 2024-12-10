@@ -3,6 +3,7 @@ __pycache__/
 
 .env
 fabfile.py
+telegram.yml
 
 *.log
 

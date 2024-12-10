@@ -40,8 +40,9 @@ app.include_router(chat.router)
 async def main():
     cfg = uvicorn.Config('main:app', host='127.0.0.1', port=8000, log_level='info', workers=2)
     server = uvicorn.Server(cfg)
-    await server.serve()
-    server.handle_exit()
+    await asyncio.gather(
+        server.serve()
+    )
 
 
 if __name__ == '__main__':
