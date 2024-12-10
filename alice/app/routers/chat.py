@@ -14,6 +14,7 @@ router = APIRouter(
 )
 
 api_key_gemini = os.getenv('API_KEY_GEMINI')
+print(api_key_gemini)
 provider = Gemini(api_key_gemini)
 
 
