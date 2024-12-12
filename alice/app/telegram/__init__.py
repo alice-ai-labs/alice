@@ -1,2 +1,2 @@
 from .config import load
-from .bot import start
+from .bots import run, send_channel

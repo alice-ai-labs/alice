@@ -1,1 +1,1 @@
-from .chat import router
+from .chat import generate_text

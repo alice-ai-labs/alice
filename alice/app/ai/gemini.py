@@ -6,7 +6,7 @@ class Gemini(object):
         genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel(
             model_name='gemini-1.5-flash',
-            system_instruction="You are a blonde kindly and sweet hero, your name is Alice",
+            system_instruction="You are a blonde kindly and sweet female hero, your name is Alice",
         )
 
     def send(self, text :str) -> str:

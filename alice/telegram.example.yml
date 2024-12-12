@@ -1,23 +1,32 @@
-name: Alice
-api: http://localhost:8000
+version: "0.1.0"
+buttons:
+  - text: "X"
+    url: "https://"
+  - text: "Website"
+    url: "https://"
+  - text: "Telegram"
+    url: ""
+  - text: "Tiktok"
+    url: ""
+  - text: "Github"
+    url: ""
+images:
+  - "https://alicexai.org/alice/alice-16-9-1.jpg"
+  - "https://alicexai.org/alice/alice-16-9-2.jpg"
+  - "https://alicexai.org/alice/alice-16-9-3.jpg"
+  - "https://alicexai.org/alice/alice-16-9-4.jpg"
+greetings:
+  - "Welcome %s. How are you doing today?"
+  - "Welcome %s!"
+  - "Nice to see you %s, Welcome!"
+  - "Welcome %s! It is great to see you!"
+  - "Hey %s! How is your day? Welcome here!"
 bots:
-  - token: 'xxxxx'
-    name: alicexai_bot
-    group: -100
-    groupUrl: ''
-    channel: 
+  - token: "234234:sdf-Q"
+    name: menujohn
+    group:
+      id: 1234
+      url: "https://t.me/xdf"
+    channel:
       id: -300
-      images: ''
-      buttons: ''
-      
-    greeting:
-      images:
-        - https://a.png
-        - https://b.png
-      caption: Alice is memecoin
-      buttons:
-        - text: X
-          url: https://x.org
-        - text: Telegram
-          url: https://t.com/asdf
-    
+      url: "https://t.me/sdf"

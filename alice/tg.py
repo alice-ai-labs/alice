@@ -1,13 +1,11 @@
-import asyncio 
-from app.telegram import load, start
-from app.telegram.const import Greetings
+import asyncio
+from app.telegram import load, run
 
 
 async def main():
-    c = load('telegram.yml')
-    token = c['bots'][0]['token']
+    cfg = load('telegram.yml')
+    await run(cfg)
 
-    await start(token)
 
 if __name__ == '__main__':
     asyncio.run(main())

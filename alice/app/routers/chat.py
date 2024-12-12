@@ -13,7 +13,7 @@ router = APIRouter(
     responses={404: {'description': 'Not found'}},
 )
 
-api_key_gemini = os.getenv('API_KEY_GEMINI')
+api_key_gemini = os.getenv('API_KEY_GEMINI') or ''
 print(api_key_gemini)
 provider = Gemini(api_key_gemini)
 
@@ -24,7 +24,7 @@ class ReqChat(BaseModel):
 
 def generate_text(text: str) -> str:
     try:
-        reply = provider.send(req.text)
+        reply = provider.send(text)
     except Exception as e:
         print('Exception:', e)
         reply = ''
@@ -35,7 +35,7 @@ def generate_text(text: str) -> str:
 async def chat(req :ReqChat):
     if not req.text:
         return
-    
+
     reply = generate_text(req.text)
 
     return {'reply': reply}
