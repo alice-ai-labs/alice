@@ -50,7 +50,7 @@ async def run_bot(buttons: list[CfgButton], images: list[str], greetings: list[s
     async def cmd_info(message: Message) -> None:
         await message.reply_photo(
             photo=random.choice(images),
-            caption='',
+            caption=botCfg.intro,
             reply_markup=btns_builder.as_markup(),
         )
 
@@ -112,12 +112,12 @@ async def run_bot(buttons: list[CfgButton], images: list[str], greetings: list[s
 
         try:
             reply = generate_text(message.text)
-            await message.answer(text=reply, parse_mode=ParseMode.HTML)
+            await message.answer(text=reply, parse_mode=ParseMode.MARKDOWN_V2)
         except Exception as e:
             print(f'reply exception:{e}')
 
     global bots
-    bot = Bot(token=botCfg.token, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+    bot = Bot(token=botCfg.token, default=DefaultBotProperties(parse_mode=ParseMode.MARKDOWN_V2))
     bots.append(BotInst(bot=bot, cfg=botCfg))
     await dp.start_polling(bot, handle_signals=False)
 
@@ -151,6 +151,41 @@ async def send_channel(channel_id :int, text :str) -> None:
     if buttons_builder and photos:
         await the_bot.send_photo(
             chat_id=channel_id,
+            photo=random.choice(photos),
+            caption=text,
+            reply_markup=buttons_builder.as_markup(),
+        )
+
+
+async def send_group(group_id :int, text :str) -> None:
+    # search bot by channel id
+    if not bots:
+        print('there is no bots')
+        return
+    if not text:
+        print('text is empty')
+        return
+    
+    the_bot = None
+    if group_id:
+        for bot in bots:
+            if bot.cfg.group.id == group_id:
+                the_bot = bot.bot
+                break
+    else:
+        the_bot = bots[0].bot
+        group_id = bots[0].cfg.group.id
+
+    if not the_bot:
+        print('not found the bot')
+        return
+    
+    global buttons_builder
+    global photos
+
+    if buttons_builder and photos:
+        await the_bot.send_photo(
+            chat_id=group_id,
             photo=random.choice(photos),
             caption=text,
             reply_markup=buttons_builder.as_markup(),

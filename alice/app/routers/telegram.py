@@ -1,7 +1,7 @@
 import os
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from app.telegram import send_channel
+from app.telegram import send_channel, send_group
 
 '''
 Routers within 'host/telegram/***'
@@ -16,10 +16,16 @@ router = APIRouter(
 
 class ReqChannel(BaseModel):
     text: str
-    channelId: int
+    id: int
 
 
 @router.post('/channel')
-async def chat(req :ReqChannel):
-    await send_channel(req.channelId, req.text)
+async def post_channel_msg(req :ReqChannel):
+    await send_channel(req.id, req.text)
+    return {'reply': 'OK'}
+
+
+@router.post('/group')
+async def post_group_msg(req :ReqChannel):
+    await send_group(req.id, req.text)
     return {'reply': 'OK'}
