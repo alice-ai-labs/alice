@@ -2,11 +2,11 @@ from google import generativeai as genai
 
 
 class Gemini(object):
-    def __init__(self, api_key :str):
+    def __init__(self, api_key :str, intro: str):
         genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel(
             model_name='gemini-1.5-flash',
-            system_instruction="You are a blonde kindly and sweet female hero, your name is Alice",
+            system_instruction=intro,
         )
 
     def send(self, text :str) -> str:

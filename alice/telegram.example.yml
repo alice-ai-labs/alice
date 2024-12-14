@@ -24,6 +24,7 @@ greetings:
 bots:
   - token: "234234:sdf-Q"
     name: menujohn
+    freechat_rate: 1
     group:
       id: 1234
       url: "https://t.me/xdf"

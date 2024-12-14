@@ -9,9 +9,9 @@ import LogoPumpfun from '/public/pumpfun.webp'
 
 const NAV_BTNS = [
     {
-        icon: '/pumpfun.webp',
-        url: process.env.NEXT_PUBLIC_PUMPFUN,
-        name: 'pump.fun',
+        icon: '/gmgn.svg',
+        url: process.env.NEXT_PUBLIC_GMGN,
+        name: 'Gmgn',
     }, {
         icon: '/tiktok.svg',
         url: process.env.NEXT_PUBLIC_TIKTOK,

@@ -17,6 +17,7 @@ class CfgGroup(BaseModel):
 class CfgBot(BaseModel):
     token: str
     username: str
+    freechat_rate: int
     group: CfgGroup
     channel: CfgGroup
 

@@ -107,7 +107,7 @@ async def run_bot(buttons: list[CfgButton], images: list[str], greetings: list[s
         if not message.text or not message.from_user or message.from_user.is_bot:
             return
         # randomly reply unmentioned message
-        if random.randint(0, 10) > 3:
+        if random.randint(0, 10) > botCfg.freechat_rate:
             return
 
         try:
@@ -131,6 +131,7 @@ async def send_channel(channel_id :int, text :str) -> None:
         print('text is empty')
         return
     
+    the_bot = None
     if channel_id:
         for bot in bots:
             if bot.cfg.channel.id == channel_id:
@@ -146,13 +147,14 @@ async def send_channel(channel_id :int, text :str) -> None:
     
     global buttons_builder
     global photos
-    
-    await the_bot.send_photo(
-        chat_id=channel_id,
-        photo=random.choice(photos),
-        caption=text,
-        reply_markup=buttons_builder.as_markup(),
-    )
+
+    if buttons_builder and photos:
+        await the_bot.send_photo(
+            chat_id=channel_id,
+            photo=random.choice(photos),
+            caption=text,
+            reply_markup=buttons_builder.as_markup(),
+        )
 
 
 async def run(cfg: Cfg) -> None:
