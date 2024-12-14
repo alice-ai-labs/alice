@@ -1,3 +1,0 @@
-'''
-Communities interfaces
-'''
