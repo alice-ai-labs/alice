@@ -14,6 +14,10 @@ import AliceL1 from '/public/alice/alice-16-9-1.jpg'
 import AliceL2 from '/public/alice/alice-16-9-2.jpg'
 import AliceL3 from '/public/alice/alice-16-9-3.jpg'
 import AliceL4 from '/public/alice/alice-16-9-4.jpg'
+import AliceL5 from '/public/alice/alice-16-9-5.png'
+import AliceL6 from '/public/alice/alice-16-9-6.png'
+import AliceL7 from '/public/alice/alice-16-9-7.png'
+import AliceL8 from '/public/alice/alice-16-9-8.png'
 
 import Avatar1 from '/public/avatars/1.svg'
 import Avatar2 from '/public/avatars/2.svg'
@@ -26,7 +30,7 @@ import Avatar8 from '/public/avatars/8.svg'
 
 const BGS = {
     P: [AliceP1, AliceP2, AliceP3, AliceP4],
-    L: [AliceL1, AliceL2, AliceL3, AliceL4],
+    L: [AliceL1, AliceL2, AliceL3, AliceL4, AliceL5, AliceL6, AliceL7, AliceL8],
 }
 
 const AVATARS = [
