@@ -112,12 +112,12 @@ async def run_bot(buttons: list[CfgButton], images: list[str], greetings: list[s
 
         try:
             reply = generate_text(message.text)
-            await message.answer(text=reply, parse_mode=ParseMode.MARKDOWN_V2)
+            await message.answer(text=reply)
         except Exception as e:
             print(f'reply exception:{e}')
 
     global bots
-    bot = Bot(token=botCfg.token, default=DefaultBotProperties(parse_mode=ParseMode.MARKDOWN_V2))
+    bot = Bot(token=botCfg.token, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     bots.append(BotInst(bot=bot, cfg=botCfg))
     await dp.start_polling(bot, handle_signals=False)
 
