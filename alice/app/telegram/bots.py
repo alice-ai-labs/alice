@@ -74,7 +74,8 @@ async def run_bot(buttons: list[CfgButton], images: list[str], greetings: list[s
             return
 
         # reply to alice
-        if message.reply_to_message and message.reply_to_message.from_user and message.text:
+        rtm = message.reply_to_message
+        if rtm and rtm.from_user and rtm.from_user.username == botCfg.username and message.text:
             text = generate_text(message.text)
             await message.reply(text)
             return
